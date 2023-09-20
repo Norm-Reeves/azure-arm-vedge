@@ -97,6 +97,20 @@
               "description": "Public Subnet IP Range for Edge WAN Interface"
             }
         },
+        "EdgeGE1LANIP": {
+          "type": "string",
+          "defaultValue": "172.23.255.253",
+          "metadata": {
+            "description": "IP Address used for Edge WAN Interface GE1 (not used)"
+          }
+        },
+        "EdgeGE2LANIP": {
+          "type": "string",
+          "defaultValue": "172.23.255.254",
+          "metadata": {
+            "description": "IP Address used for Edge WAN Interface GE2"
+          }
+        },
         "PrivateSubnetName": {
             "type": "string",
             "defaultValue": "snet-transient-lan",
