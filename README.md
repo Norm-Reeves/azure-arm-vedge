@@ -2,7 +2,7 @@
 
 Deployment template to deploy VMware SD-WAN By VeloCloud to Azure.
 
-Mirrored source (https://github.com/vmwarecode/VMware-SD-WAN-By-VeloCloud-Azure-Resource-Manager-Template). Added readme to allow deployment directly from GitHub and to notate important information such as known issues and changes made.
+Mirrored source (https://github.com/vmwarecode/VMware-SD-WAN-By-VeloCloud-Azure-Resource-Manager-Template). Added readme to allow deployment directly from GitHub and to notate important information such as known issues and changes made. Fixed a nic3 dependency that would cause a failure in deployment.
 
 Deploying
 =========
