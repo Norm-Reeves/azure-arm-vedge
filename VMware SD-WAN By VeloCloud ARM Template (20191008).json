@@ -338,8 +338,7 @@
                             "subnet": {
                                 "id": "[variables('subnet1Ref')]"
                             },
-                            "privateIPAllocationMethod": "Static",
-                            "privateIPAddress": "[variables('PublicSubnetGE2StartAddress')]",
+                            "privateIPAllocationMethod": "Dynamic",
                             "publicIpAddress": {
                                 "id": "[resourceId('Microsoft.Network/publicIpAddresses', variables('publicIP'))]"
                             }
