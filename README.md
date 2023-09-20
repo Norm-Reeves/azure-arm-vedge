@@ -33,6 +33,7 @@ Change Log:
 0.3:
 
   • Edited "Instance details" to our TPx/Azure environment.
+  
   • 
 
 Known Issues & Desired Features:
