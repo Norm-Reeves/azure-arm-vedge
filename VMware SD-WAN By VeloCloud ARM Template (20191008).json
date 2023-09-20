@@ -310,7 +310,7 @@
                                 "id": "[variables('subnet1Ref')]"
                             },
                             "privateIPAllocationMethod": "Static",
-                            "privateIPAddress": "[variables('PublicSubnetGE1StartAddress')]",
+                            "privateIPAddress": "[variables('PublicSubnetGE1StartAddress')]"
                         }
                     }
                 ],
