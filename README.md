@@ -7,7 +7,7 @@ Mirrored source (https://github.com/vmwarecode/VMware-SD-WAN-By-VeloCloud-Azure-
 Deploying
 =========
 
-1.) Open template link: https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FNorm-Reeves%2Fazure-arm-vedge%2F0.3%2FVMware%20SD-WAN%20By%20VeloCloud%20ARM%20Template%20(20191008).json
+1.) Open template link: https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FNorm-Reeves%2Fazure-arm-vedge%2F0.2%2FVMware%20SD-WAN%20By%20VeloCloud%20ARM%20Template%20(20191008).json
 
 2.) Edit attributes as needed and deploy.
 
