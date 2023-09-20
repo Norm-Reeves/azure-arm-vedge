@@ -97,14 +97,14 @@
               "description": "Public Subnet IP Range for Edge WAN Interface"
             }
         },
-        "EdgeGE1LANIP": {
+        "EdgeGE1WANIP": {
           "type": "string",
           "defaultValue": "172.23.255.253",
           "metadata": {
             "description": "IP Address used for Edge WAN Interface GE1 (not used)"
           }
         },
-        "EdgeGE2LANIP": {
+        "EdgeGE2WANIP": {
           "type": "string",
           "defaultValue": "172.23.255.254",
           "metadata": {
@@ -147,6 +147,8 @@
         "subnet2Name": "[parameters('PrivateSubnetName')]",
         "vNetPrefixSpace": "[parameters('vNetPrefix')]",
         "PublicSubnetSpace": "[parameters('PublicSubnet')]",
+        "PublicSubnetGE1StartAddress": "[parameters('EdgeGE1WANIP')]",
+        "PublicSubnetGE2StartAddress": "[parameters('EdgeGE2WANIP')]",
         "PrivateSubnetSpace": "[parameters('PrivateSubnet')]",
         "PrivateSubnetStartAddress": "[parameters('EdgeGE3LANIP')]",
         "routeTablePublic": "[concat(parameters('vNetName'),'-PUB-RT')]",
@@ -307,7 +309,8 @@
                             "subnet": {
                                 "id": "[variables('subnet1Ref')]"
                             },
-                            "privateIPAllocationMethod": "Dynamic"
+                            "privateIPAllocationMethod": "Static",
+                            "privateIPAddress": "[variables('PublicSubnetGE1StartAddress')]",
                         }
                     }
                 ],
@@ -335,7 +338,8 @@
                             "subnet": {
                                 "id": "[variables('subnet1Ref')]"
                             },
-                            "privateIPAllocationMethod": "Dynamic",
+                            "privateIPAllocationMethod": "Static",
+                            "privateIPAddress": "[variables('PublicSubnetGE2StartAddress')]",
                             "publicIpAddress": {
                                 "id": "[resourceId('Microsoft.Network/publicIpAddresses', variables('publicIP'))]"
                             }
