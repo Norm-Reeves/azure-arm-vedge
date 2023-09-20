@@ -339,7 +339,7 @@
                                 "id": "[variables('subnet1Ref')]"
                             },
                             "privateIPAllocationMethod": "Static",
-                            "privateIPAddress": "[variables('PublicSubnetGE2StartAddress')]"
+                            "privateIPAddress": "[variables('PublicSubnetGE2StartAddress')]",
                             "publicIpAddress": {
                                 "id": "[resourceId('Microsoft.Network/publicIpAddresses', variables('publicIP'))]"
                             }
