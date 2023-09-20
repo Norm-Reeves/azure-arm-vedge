@@ -340,7 +340,8 @@
             "location": "[resourceGroup().location]",
             "comments": "VeloCloud GE3 - LAN",
             "dependsOn": [
-                "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
+                "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]",
+                "[variables('networkSecurityGroupName')]"
             ],
             "properties": {
                 "enableIPForwarding": true,
