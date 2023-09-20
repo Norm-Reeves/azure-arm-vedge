@@ -309,7 +309,8 @@
                             "subnet": {
                                 "id": "[variables('subnet1Ref')]"
                             },
-                            "privateIPAllocationMethod": "Dynamic"
+                            "privateIPAllocationMethod": "Static",
+                            "privateIPAddress": "[variables('PublicSubnetGE1StartAddress')]"
                         }
                     }
                 ],
