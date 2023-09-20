@@ -20,7 +20,7 @@ Change Log:
 ============
 0.0:
 
-  • Mirrored source ([https://github.com/sophos-iaas/xg-azure/](https://github.com/vmwarecode/VMware-SD-WAN-By-VeloCloud-Azure-Resource-Manager-Template) and confirmed working.
+  • Mirrored source (https://github.com/vmwarecode/VMware-SD-WAN-By-VeloCloud-Azure-Resource-Manager-Template) and confirmed working.
   
 0.1:
 
