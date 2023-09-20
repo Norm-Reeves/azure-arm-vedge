@@ -26,12 +26,14 @@ Change Log:
 
   • Added readme to allow deployment directly from GitHub and to notate important information such as known issues and changes made.
 
+0.2:
+
+  • Added dependency "[variables('networkSecurityGroupName')]" for nic3.
+
 Known Issues & Desired Features:
 ============
-1.) NSG "VELO_vVCE_SG" is not a dependency for nic3, which can cause it to fail on deployment if nic3 is created before NSG.
+1.) NICs 1 and 2 don't allow for static IP assignment.
 
-2.) NICs 1 and 2 don't allow for static IP assignment.
+2.) The resource group used needs to be the same as the VNET's.
 
-3.) The resource group used needs to be the same as the VNET's.
-
-4.) Handle variables in a parameters.json file.
+3.) Handle variables in a parameters.json file.
