@@ -11,7 +11,7 @@ Deploying
 
 2.) Edit attributes as needed and deploy.
 
-3.) Deployment will start, Wait until the deployment goes to state "Succeeded".
+3.) Deployment will start, wait until the deployment goes to state "Succeeded".
 
 4.) Confirm in TPX Network Orchestrator that the circuit is activated (may take 15 minutes).
 
