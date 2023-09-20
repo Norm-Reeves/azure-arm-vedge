@@ -30,6 +30,11 @@ Change Log:
 
   • Added dependency "[variables('networkSecurityGroupName')]" for nic3.
 
+0.3:
+
+  • Edited "Instance details" to our TPx/Azure environment.
+  • 
+
 Known Issues & Desired Features:
 ============
 1.) NICs 1 and 2 don't allow for static IP assignment.
