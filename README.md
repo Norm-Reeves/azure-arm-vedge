@@ -7,7 +7,7 @@ Mirrored source (https://github.com/vmwarecode/VMware-SD-WAN-By-VeloCloud-Azure-
 Deploying
 =========
 
-1.) Open template link: https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FNorm-Reeves%2Fazure-arm-vedge%2F0.2%2FVMware%20SD-WAN%20By%20VeloCloud%20ARM%20Template%20(20191008).json
+1.) Open template link: https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FNorm-Reeves%2Fazure-arm-vedge%2F0.3%2FVMware%20SD-WAN%20By%20VeloCloud%20ARM%20Template%20(20191008).json
 
 2.) Edit attributes as needed and deploy.
 
@@ -30,10 +30,16 @@ Change Log:
 
   • Added dependency "[variables('networkSecurityGroupName')]" for nic3.
 
+0.3:
+
+  • Edited "Instance details" to our TPx/Azure environment.
+  
+  • Changed nic 1 & 2 to static assignment.
+
 Known Issues & Desired Features:
 ============
-1.) NICs 1 and 2 don't allow for static IP assignment.
+1.) The resource group used needs to be the same as the VNET's.
 
-2.) The resource group used needs to be the same as the VNET's.
+2.) Handle variables in a parameters.json file.
 
-3.) Handle variables in a parameters.json file.
+3.) Get rid of nic1 which is not used to enable the use of more cost-effective VM sizes.

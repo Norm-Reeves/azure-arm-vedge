@@ -22,7 +22,7 @@
         },
         "VCO": {
             "type": "string",
-            "defaultValue": "TargetVCO",
+            "defaultValue": "vco176-usca1.velocloud.net",
             "metadata": {
                 "description": "FQDN or IP address of VCO"
             }
@@ -33,7 +33,7 @@
                 "true",
                 "false"
             ],
-            "defaultValue": "false",
+            "defaultValue": "true",
             "metadata": {
                 "description": "Determines whether or not to ignore certificate errors"
             }
@@ -47,7 +47,7 @@
         },
         "EdgeName": {
             "type": "string",
-            "defaultValue": "VeloCloudVirtualEdge",
+            "defaultValue": "vmvelocloudXX",
             "metadata": {
                 "description": "Name of the Virtual Edge"
             }
@@ -64,56 +64,70 @@
                 "new",
                 "existing"
             ],
-            "defaultValue": "new",
+            "defaultValue": "existing",
             "metadata": {
                 "description": "Determines whether or not a new virtual network should be provisioned."
             }
         },
         "vNetName": {
             "type": "string",
-            "defaultValue": "AzureVNET",
+            "defaultValue": "vnet-westus2-01-prod",
             "metadata": {
               "description": "Virtual Network Name"
             }
         },
         "vNetPrefix": {
             "type": "string",
-            "defaultValue": "172.16.0.0/16",
+            "defaultValue": "172.23.0.0/16",
             "metadata": {
               "description": "Virtual Network IP Address Space"
             }
         },
         "PublicSubnetName": {
             "type": "string",
-            "defaultValue": "Public_SN",
+            "defaultValue": "snet-shared-wan",
             "metadata": {
               "description": "Public Subnet Name for Edge WAN Interface within vNET"
             }
         },
         "PublicSubnet": {
             "type": "string",
-            "defaultValue": "172.16.0.0/24",
+            "defaultValue": "172.23.255.0/24",
             "metadata": {
               "description": "Public Subnet IP Range for Edge WAN Interface"
             }
         },
+        "EdgeGE1WANIP": {
+          "type": "string",
+          "defaultValue": "172.23.255.253",
+          "metadata": {
+            "description": "IP Address used for Edge WAN Interface GE1 (not used)"
+          }
+        },
+        "EdgeGE2WANIP": {
+          "type": "string",
+          "defaultValue": "172.23.255.254",
+          "metadata": {
+            "description": "IP Address used for Edge WAN Interface GE2"
+          }
+        },
         "PrivateSubnetName": {
             "type": "string",
-            "defaultValue": "Private_SN",
+            "defaultValue": "snet-transient-lan",
             "metadata": {
               "description": "Private Subnet Name for Edge LAN Interface witin vNET"
             }
         },
         "PrivateSubnet": {
             "type": "string",
-            "defaultValue": "172.16.1.0/24",
+            "defaultValue": "172.23.253.0/24",
             "metadata": {
               "description": "Private Subnet for Edge LAN Interface"
             }
         },
         "EdgeGE3LANIP": {
           "type": "string",
-          "defaultValue": "172.16.1.4",
+          "defaultValue": "172.23.253.254",
           "metadata": {
             "description": "IP Address used for Edge LAN Interface GE3"
           }
@@ -133,6 +147,8 @@
         "subnet2Name": "[parameters('PrivateSubnetName')]",
         "vNetPrefixSpace": "[parameters('vNetPrefix')]",
         "PublicSubnetSpace": "[parameters('PublicSubnet')]",
+        "PublicSubnetGE1StartAddress": "[parameters('EdgeGE1WANIP')]",
+        "PublicSubnetGE2StartAddress": "[parameters('EdgeGE2WANIP')]",
         "PrivateSubnetSpace": "[parameters('PrivateSubnet')]",
         "PrivateSubnetStartAddress": "[parameters('EdgeGE3LANIP')]",
         "routeTablePublic": "[concat(parameters('vNetName'),'-PUB-RT')]",
@@ -293,7 +309,8 @@
                             "subnet": {
                                 "id": "[variables('subnet1Ref')]"
                             },
-                            "privateIPAllocationMethod": "Dynamic"
+                            "privateIPAllocationMethod": "Static",
+                            "privateIPAddress": "[variables('PublicSubnetGE1StartAddress')]"
                         }
                     }
                 ],
@@ -321,7 +338,8 @@
                             "subnet": {
                                 "id": "[variables('subnet1Ref')]"
                             },
-                            "privateIPAllocationMethod": "Dynamic",
+                            "privateIPAllocationMethod": "Static",
+                            "privateIPAddress": "[variables('PublicSubnetGE2StartAddress')]",
                             "publicIpAddress": {
                                 "id": "[resourceId('Microsoft.Network/publicIpAddresses', variables('publicIP'))]"
                             }
