@@ -34,12 +34,12 @@ Change Log:
 
   • Edited "Instance details" to our TPx/Azure environment.
   
-  • 
+  • Changed nic 1 & 2 to static assignment.
 
 Known Issues & Desired Features:
 ============
-1.) NICs 1 and 2 don't allow for static IP assignment.
+1.) The resource group used needs to be the same as the VNET's.
 
-2.) The resource group used needs to be the same as the VNET's.
+2.) Handle variables in a parameters.json file.
 
-3.) Handle variables in a parameters.json file.
+3.) Get rid of nic1 which is not used to enable the use of more cost-effective VM sizes.
